@@ -1,16 +1,12 @@
-import { async } from "q";
-import React, { useState, useLayoutEffect, useEffect } from "react";
+
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Select from "react-select";
 import "../styles/Form.css";
 const axios = require("axios");
 
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
+
 
 const Form = () => {
   const navigate = useNavigate();
@@ -53,7 +49,7 @@ const Form = () => {
     }
   };
 
-  const handleClick = async () => {
+  const handleClick = () => {
     if (selectedProduct) {
       navigate("/showPage", { state: { selectedProduct } });
     }

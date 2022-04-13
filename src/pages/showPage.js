@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import React, { useState, useLayoutEffect, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/showPage.css";
 const axios = require("axios");
 
@@ -16,7 +16,6 @@ const ShowPage = (route) => {
     let res = await axios.get(
       `https://obscure-woodland-00834.herokuapp.com/api/products/${state.selectedProduct}`
     );
-    let result = res.data.data.attributes.Price;
 
     setPrice(res.data.data.attributes.Price);
     setName(res.data.data.attributes.Name);
